@@ -8,11 +8,15 @@ jobs:
       tag: '10.4'
     steps:
       - checkout
-      restore_cache:
+      - restore_cache:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
       - run: npm install
       - save_cache:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+            - ~/.npm 
+            - ~/.cache
       - node/with-cache:
           steps:
             - run: npm install
