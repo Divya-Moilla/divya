@@ -12,6 +12,6 @@ jobs:
           steps:
             - run: npm install
       - run: npm run test
-- add_ssh_keys:
+      - add_ssh_keys:
           fingerprints:
             - "SHA256:cv/tqCeswt5/CvXv+d+n9fLJsoF6Bd9RnpyStKg89YE divyamoilla10@gmail.com"
